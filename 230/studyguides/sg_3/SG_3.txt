@@ -1,0 +1,319 @@
+﻿Study Guide 3 - HTML and CSS - Chap. 13 -15   Name  Alexander Lozada				
+
+Due: Start of class - first day of week 5
+Your HTML files must be zipped and handed in to the Study Guide 3 dropbox. This document should be submitted to the dropbox as well, but not zipped. Physical printouts will not be accepted.
+
+Chapter 13 - Boxes
+CSS treats each HTML element as if it sits in its own box.
+
+1) If you don’t set the height and width of a box, how big will it be?
+
+It will be the width of the document, and have 0 height
+
+
+2) Some page designs can expand and shrink to fit the size of the browser window. What are the two CSS properties that can be used to set a minimum and maximum size of a box (element)?
+
+min-width, max-width
+
+Go check out the minimum width example on the book website:
+ http://htmlandcssbook.com/code-samples/chapter-13/
+
+
+3) What CSS properties are used to control the minimum height and maximum height of a box?
+
+min-height, max-height
+
+4) Imagine a paragraph is not big enough to hold its content, write a CSS rule (with a selector) that will hide this extra content.
+
+overflow: hidden;
+
+
+5) Now write another rule for the same paragraph that will instead cause scroll bars to appear when there is too much content to fit in the paragraph.
+
+overflow: scroll;
+
+
+
+6) What are the three properties available to boxes that can be adjusted to control their appearance?
+
+height, width, max-width, background-color, etc.
+
+7) True or False. If you add padding to a 400px box, the box won’t get any bigger. Instead the content area of the box will get smaller.
+
+False
+
+
+8) True or False. Margins sit outside of a box.
+
+True
+
+
+9) True or False. Padding goes inside of a box and adds space between the content and the borders of the box.
+
+True
+
+
+10) Notice how using margin and padding to create white space and vertical margins makes this page:
+
+http://htmlandcssbook.com/code-samples/chapter-13/white-space-vertical-margin.html
+
+look better than this page:
+
+http://htmlandcssbook.com/code-samples/chapter-13/white-space-vertical-margin-no-space.html
+
+	No answer required.
+
+
+Borders
+11) Give the property used to control the width of borders.
+
+border-width
+
+
+12) List the 8 values for the border-style CSS property.
+
+solid, dotted, dashed, double, groove, ridge, inset, outset
+
+
+13) Give the property used to control the color of borders.
+
+border-color
+
+
+Note that the border property can be used as as shorthand for the above 3 properties.
+
+Padding
+
+Note that the bottom box on page 313 has more padding and this makes the text easier to read.
+
+
+14) For the following shorthand padding declaration, label the left, right, top, and bottom padding:
+
+	padding: 10px 5px 20px 10px;
+        top, right, bottom, left
+
+
+
+15) “CSS margins collapse” - what does this mean? (page 314)
+
+if there are two elements verical with margin, it will only use one of the biggest
+margins
+
+
+
+16) Note the trick of centering a box (page 315)
+
+margin-left: auto;
+margin-right: auto;
+
+
+If you want to center text (rather than the entire box), use text-align: center
+
+
+No answer required.
+display
+
+17)  Describe what the following CSS properties do:
+
+display : inline
+
+Makes the element inline (like text)
+
+
+
+display: block
+
+Make the element take up its own line
+
+
+display: inline-block
+
+Makes a block element behave like inline but still be able to use block properties
+
+display: none
+
+don't display the item at all
+
+
+18) How is visibility: hidden different from display: none?
+
+An invisible item still takes up space.
+
+
+19) Which CSS property is used to add drop shadows to a box?
+
+box-shadow
+
+
+20) Which CSS property is used to add rounded corners  to a box, or even to give it an elliptical shape?
+
+border-radius
+
+
+Look over the “The Analog Specialists” example at: 
+http://htmlandcssbook.com/code-samples/chapter-13/example.html#
+
+Be sure to “View Source” to see the HTML and CSS. Note how display:inline has put the navigation links all on one line, and that margin:auto has centered the #page div.
+
+HW
+
+
+**** HW-3 Part I ****
+
+Give the recipe page’s unordered list of ingredients an elliptical border (something asymmetrical, it doesn’t have to look exactly like this), and a visible drop shadow. See pages 320 and 322 for how to do this. If the text doesn’t fit, that’s OK, we’ll fix it in the next section.
+
+
+
+Chapter 14 - Lists, Tables & Forms
+
+CSS for Lists
+
+1) Read over the CSS list pages (331-366) and 
+
+
+**** HW-3 Part II ****
+
+Change the ingredients list style type to a square
+Change the list style position to inside
+
+
+
+
+2) Read over the rest of the chapter (HTML Table and HTML Form CSS)
+
+No answer required.
+
+3) Note the CSS for styling the cursor on page 347. Write a CSS rule that turns the cursor into a question mark (help)
+
+cursor: help;
+
+
+
+4) Look over the List, Table and Forms examples at: 
+http://htmlandcssbook.com/code-samples/chapter-14/example.html
+
+
+Be sure to “view source” to see the CSS.
+
+No answer required.
+
+
+
+
+
+Chapter 15 - Layout
+
+Block-level elements start on their own line and act as the main building blocks of any layout, while inline boxes flow between surrounding text.
+
+If one block-level element sits inside another block level element then the outer box is know as the containing or parent element.
+
+There’s quite a bit to know in this area - we’ll be spending the next 2-3 weeks on this.
+
+Be sure to view the examples (and the source) for this chapter at: 
+http://htmlandcssbook.com/code-samples/chapter-15/
+
+
+Positioning Schemes
+1) Normal flow (the default, position:static) each block-level element sits on top of the next one.
+
+No answer required.
+
+2) Relative Positioning (position:relative) moves an element offset to its initial computer
+
+
+3) Absolute Positioning (position:absolute) causes a box to be positioned absolutely from the documet's top left
+
+
+4) Fixed Positioning (position:fixed) positions the element in relation to the browser window. When a user scrolls down the page it sticks with it
+
+
+5) Overlapping elements - when using relative, fixed, or absolute positioning elements can overlap. Which CSS property is used to determine which element is on top?
+
+z-index
+
+
+6) Floating Elements - the float property allows you to make an element in normal flow and take up 0 height unless the parent element has the property overflow: hidden
+
+
+
+7) Which CSS property should be used with float so that it functions consistently?
+
+overflow: hidden
+
+
+
+8) Floating allows boxes to site next to each other, but sometimes the results can be strange. clear is sometimes used as as solution. What does clear: left do?
+
+clears all elements to the left side of that element
+
+
+
+
+9) Note the Floated Elements: Problem and Solution. 
+Setting the parent element to overflow:auto and width:100% was the solution.
+
+
+
+No answer required.
+
+
+10) Read over the multi-column layout with floats section - easy!
+
+
+No answer required.
+
+
+
+
+11) Give 2 advantages and 2 disadvantages of using Fixed Width Layouts
+
+- easier to implement
+- more consistent
+
+- don't display anywhere else properly
+- aren't mobile optimized
+- don't do this in 2016
+
+
+
+12) Give 2 advantages and 2 disadvantages of using Liquid Layouts.
+
+- should display well in any view
+- modern tools make developing them easy
+
+- edge circumstances may make layouts more difficult
+- can stifle creativity when focusing on responsive design
+
+
+13) Be sure to check out the Fixed Layout and Liquid Layout examples in the book and on the Web Site.
+	No answer required.
+
+
+14) Designers commonly use a 960-pixel wide layout with 12 columns (60 pixels wide, 10 pixel margins). This 960 pixel grid allows a multitude of column layouts, which you can see on pages 389-390.
+
+
+	No answer required.
+
+
+15) Look over @import and the <link> tag and understand what they do.
+
+	No answer required.
+
+16) Finally, look over the final  chapter example, which uses 960.gs
+
+	No answer required.
+
+
+
+
+Submission: 
+
+ZIP up the improved recipe page (Part I and II) and files
+
+Do NOT ZIP up this document (with the answers)
+
+Post the zip and document to dropbox before the due date
+
+
+
+
