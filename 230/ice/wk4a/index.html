@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body{
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    #main{
+      min-width: 250px;
+      min-height: 460px;
+      width: 35%;
+      padding: 10px;
+      padding-top: 30px;
+      margin: 0 auto;
+      color: white;
+      background-color: blue;
+    }
+
+    @media screen and (max-width: 720px){
+      #main{
+        min-width: 350px;
+        min-height: 560px;
+        background-color: red;
+        color: black;
+      }
+    }
+
+    @media screen and (max-width: 480px){
+      body{
+        padding-top: 5px;
+
+      }
+
+      #main{
+        width: 80%;
+        padding: 5px;
+        background-color: green;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </div>
+</body>
+</html>

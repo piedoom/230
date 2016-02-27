@@ -1,0 +1,43 @@
+/* css rules for main index page */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,400italic,300italic,100italic);
+
+body{
+    background: #fff1e0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #441d00;
+    font-weight: 300;
+}
+
+h1,h2{
+     font-family: 'Roboto', sans-serif;
+     color: #ff7200;
+     font-weight: 400;
+     margin: 0 auto;
+}
+
+h1{
+    font-size: 48px;
+}
+
+h2{
+    font-size: 36px;
+    text-decoration: underline;
+}
+
+a, a:active, a:visited{
+    color: #ff7200;
+    text-decoration: none;
+}
+
+a:hover{
+    color #dd6100;
+}
+
+.image-holder{
+    padding: 24px;
+    float: right;
+    display: inline-block;
+}
+
