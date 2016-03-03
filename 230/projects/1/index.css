@@ -1,0 +1,83 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+/* container for our canvas */
+c_container{
+    width: 100%;
+}
+
+nav{
+    width: 100%;
+    background: #BF2828;
+    color: white;
+    padding: 18px 24px;
+    font-size: 24px;
+    box-sizing: border-box;
+}
+
+body nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 48px;
+}
+
+#myCanvas{
+    background: #bf2828;
+}
+
+.container{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.buttons div{
+    letter-spacing: 1px;
+    background: #BF2828;
+    padding: 8px 24px;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+}
+
+h1{
+    color: #bf2828;
+    font-size: 36px;
+    padding-top: 24px;
+}
+
+h1::after{
+    content: " ";
+    border-bottom: solid 2px #bf2828;
+    display: block;
+    width: 50px;
+}
+
+.container p{
+    color: #222222;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+footer{
+    color: grey;
+    margin-top: 80px;
+    padding: 24px 0;
+    text-align: center;
+}
+
+.container a, .container a:visited{
+    color: #bf2828;
+}

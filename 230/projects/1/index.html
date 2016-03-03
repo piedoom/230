@@ -1,12 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title></title>
+  <link rel="stylesheet" href="index.css" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 </head>
 <body>
- <canvas width='1000' height='500' style=" border: 1px solid grey;" id="myCanvas">
- </canvas>
+  <nav>
+    <a href="./index.html">canvas project</a>
+    <a href="moreinfo.html">more info</a>
+    <a href="fullscreen.html">fullscreen</a>
+  </nav>
+  <div id="c_container">
+    <canvas width='1000' height='500' id="myCanvas">
+    </canvas>
+  </div>
+  <div class="buttons">
+    <div id="reset">
+      RESET
+    </div>
+    <div id="save">
+      SAVE
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>How to Use</h1>    
+    <p>
+      Move your mouse around in the red area above to draw spirograph-like circles.
+      Press the left bracket key "{" in order to make the circles smaller, and 
+      the right bracket key "}" in order to make the circles larger.  Press the
+      "reset" button to clear the canvas, and the "save" button to save the image
+      to a file.
+    </p>
+
+    <h1>Known Problems</h1>
+    <p>
+      When the canvas or window is resized, it will clear all of the artwork.
+    </p>
+
+    <h1>How does it work?</h1>
+    <p>
+      I used mainly plain javascript and the Canvas API in order to create a very
+      simplistic drawing application.  First, the program finds the canvas in the
+      DOM.  Next, the program sets up handlers to take care of actions like moving
+      the mouse.  When the mouse is moved in the canvas, a 360 degree arc (circle)
+      is drawn with a variable radius.<br><br>
+      The document is saved by getting the image in the canvas and saving it as data.
+      It is automatically saved by opening that data in the browser.  The clear
+      button works by drawing a clear rectagle over everything.
+    </p>
+  
+    <footer>
+      <a href="https://github.com/piedoom/230/tree/master/230/projects/1">
+        Find the code for this project here.
+      </a>
+      Licensed under the BSD 3-Clause.</footer> 
+  </div>
+
 
   <script src="index.js"></script>
 </body>

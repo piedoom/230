@@ -29,8 +29,8 @@ function getMousePos(canvas, evt){
 function drawNode(mousePos){
     ct.beginPath();
     ct.arc(mousePos.x, mousePos.y, size, 0, 2 * Math.PI);
+    ct.strokeStyle = "white";
     ct.stroke();
-    ct.fill;
 }
 
 // get a listener for keypresses
@@ -46,3 +46,31 @@ function doKeyDown(e){
         size++;
     }
 }
+
+$('#reset').click(function(){
+    ct.clearRect(0,0, c.width, c.height);
+});
+
+$('#save').click(function(){
+    var image = c.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    window.location.href=image;
+});
+
+////////////////
+//window stuff//
+////////////////
+$(function(){
+    function res(){
+        var target_width = $('#c_container').width();
+        ct.canvas.width = target_width;
+        if ($('#myCanvas').hasClass('fullscreen')){
+            ct.canvas.height = $(window).height() - $('nav').height();
+        }
+    }
+
+    $(window).resize(function(){
+        res();
+    });
+
+    res();
+});
