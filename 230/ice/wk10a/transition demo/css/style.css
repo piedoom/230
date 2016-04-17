@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.cogDiv, .textDiv {
+    width: 100%;
+}
+
+.cogDiv {
+    font-size: 14em;
+}
+
+.textDiv {
+    font-size: 4em;
+    color: white;
+    text-shadow: 1px 2px #444;
+}
+
+#content {
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    padding-top:10%;
+    background-color: #100024;
+}
+
+#leftSide {
+    float:left;
+    background-color:green;
+    width:50%;
+    height: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#rightSide {
+    background-image: url("../game.png");
+    background-position: center;
+    float:right;
+    width:50%;  
+    height: 60%;
+    text-align: center;
+}

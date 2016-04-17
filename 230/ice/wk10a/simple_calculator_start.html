@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8" />
+	<title>Simple Calculator</title>
+
+  <script>
+    function init(){
+        answerArea = document.querySelector("#value");
+        button = document.querySelector("#add");
+        button.onclick(function(){
+          runclick(answerArea);
+        });
+        mult = document.querySelector("#mult");
+        mult.onclick(function(){
+          multiply(answerArea);
+        });
+    }
+    window.onload = init;
+    function runclick(answerArea){
+        var answer = parseFloat(document.querySelector("#a1").value) + parseFloat(document.querySelector("#a2").value) + parseFloat(document.querySelector("#a3").value);
+      console.log(answer)
+      answerArea.innerHTML = answer
+    }
+    function multiply(answerArea){
+        var answer = parseFloat(document.querySelector("#a1").value) * parseFloat(document.querySelector("#a2").value) * parseFloat(document.querySelector("#a3").value);
+        answerArea.innerHTML = answer
+    }
+
+     </script>
+</head>
+<body>
+<header>Simple Calculator</header>
+
+<section>
+<input type="number" placeholder="number" id="a1"/>
+<input type="number" placeholder="number" id="a2"/>
+<input type="number" placeholder="number" id="a3"/>
+
+<button id="add">Add</button>
+
+<div id="value"></div>
+ 
+</section>
+
+</body>
+</html>
