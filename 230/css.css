@@ -41,3 +41,17 @@ a:hover{
     display: inline-block;
 }
 
+.projects a{
+    background: orange;
+    border-radius: 4px;
+    color: white;
+    padding: 12px;
+    font-size: 24px;
+    margin: 4px 0px;
+    display: inline-block;
+}
+
+body .active{
+    border-radius: 8px;
+    background: red;
+}
