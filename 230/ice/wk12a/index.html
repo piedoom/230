@@ -1,0 +1,79 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .swatch{
+        width: 100px;
+        height: 100px;
+        float: left;
+        cursor: pointer;
+        position: relative;
+      }
+      body, .swatch{
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+      body{
+        margin: 0;
+        background: #2e2e2e;
+      }
+    </style>
+    <script>
+      // cool color picker stuff yo
+      function init(){
+        
+        //we gotta make this enterprise ready javascript
+        function setColorArray(arrayOfColors){
+          var returnColors = []
+          for (var i = 0; i < arrayOfColors.length; i++){
+            returnColors.push(arrayOfColors[i])
+          }
+          return returnColors;
+        }
+
+        function setBgColor(div){
+          document.querySelector("body").style.backgroundColor = div.style.backgroundColor;
+          var swatches = document.querySelectorAll(".swatch");
+          for (var i = 0; i < swatches.length; i++){
+            swatches[i].style.top = 0;
+            swatches[i].style.border = "4px solid " + swatches[i].style.backgroundColor;
+          }
+          //div.style.top = 10;
+          div.style.border = "4px solid white"
+        }
+
+        // verbose function names to ensure readability
+        function createHtml(arrayOfColors){
+          for (var i = 0; i < arrayOfColors.length; i++){
+            // create html
+            var colorSelector = document.getElementById("colorSelector");
+            var div = document.createElement("DIV");
+            div.className = "swatch";
+            div.style.backgroundColor = arrayOfColors[i];
+            div.style.border = "4px solid " + arrayOfColors[i];
+            colorSelector.appendChild(div);
+
+            // create handlers
+            div.onclick = function(){
+              setBgColor(this);
+            };
+          }
+        }
+
+        function createHandlers(){
+            
+        }
+
+        colors = setColorArray(["#F57C00","#1976D2","#CDDC39","#9C27B0","#FF4081","#FFC107","#009688","#616161","#FF5722","#00BCD4"])
+        createHtml(colors);
+      }
+      window.onload = init;
+    </script>
+  </head>
+  <body>
+    <div id="colorSelector"><div>
+  </body>
+</html>
