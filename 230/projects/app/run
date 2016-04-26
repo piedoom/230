@@ -1,0 +1,13 @@
+require 'sinatra'
+require 'erb'
+
+set :bind, '0.0.0.0'
+
+get '/' do
+    erb :index
+end
+
+get '/assets/images/:file' do
+    send_file("/assets/images/#{params[:file
+    ]}", disposition: 'inline')
+end

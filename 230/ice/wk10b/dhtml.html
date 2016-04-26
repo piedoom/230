@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DHTML FUN</title>
+    <script>
+      function start(){
+        function changeBoxColor(prop,color){
+          document.getElementById("coolBeans").style[prop]=color;
+          // does js not have metaprogramming stuff?
+        }
+
+        var inputs = document.querySelectorAll("input");
+        for (var i = 0; i < inputs.length; i++){
+          inputs[i].onchange = function() {
+            changeBoxColor("backgroundColor","green");
+          }
+        }
+      }
+      window.onload = start;
+
+    </script>
+    <style>
+      /* I'm going to cheat a little bit */
+      /* hope you don't mind */
+      .tn{
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+      
+      .yellow:hover{
+        background: yellow;
+      }
+
+    </style>
+</head>
+<body>
+  <div class="tn yellow" style="border:2px solid gray; width:10em; padding:5px; margin-bottom:30px;">
+    mouseover test
+  </div>
+  <form action="" method="">
+     Put in a color name (or hex):<input type="text" size="30" /><br/>
+     Put in a font size (like 12pt):<input type="text" size="30" /><br/>
+     Put in a font family:<input type="text" size="30" /><br/>
+     Put in a new left (like 100px):<input type="text" size="30" /><br/>
+     Put in a new top (like 200px):<input type="text" size="30" /><br/>
+     Put in a background color:<input type="text" size="30" />
+  </form> 
+  <div id="coolBeans" style="border:2px solid red; padding:3em; width:10em; position:relative;">
+    Some text to control
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+	<title>JavaScript Collapsible Menu</title>
+	<style type="text/css">
+		a {	
+            color: #669;
+			outline: none;
+			text-decoration: none; 
+        }
+		
+		a:hover {
+			color: red;
+			text-decoration: none; 
+        }
+		
+		.rel-title
+        {
+			color: #ff6600;
+			cursor: pointer;
+			font-size: 10pt;
+			font-weight: bold;
+			position: relative;
+			top: 10px; 
+        }
+	    
+        span a {
+            left: 30px;
+            position: relative;
+            top: 10px; 
+        }
+	</style>
+
+    <!-- Script tag allows you to write JS just like a style tag allows you to write CSS -->
+	<script>
+        /** window.onload is the event to ensure the entire page has loaded into memory
+            We can't interact with the elements if the elements haven't been downloaded yet
+            window.onload waits for the full page to download.  
+            We set window.onload equal to our main function. 
+        **/
+        window.onload = init;
+    
+        //Function to act as our main function
+        function init() {
+            //grab all of the menus with the class menuExpandMenu  (.myExpandMenu)
+            //This will return an array of all matching objects
+            var menus = document.querySelectorAll(".myExpandMenu");
+            
+            //Loop through all of our menu items
+            for(var i = 0; i < menus.length; i++ ) {
+            
+                //For each menu item add a click event to call expandMenu on itself.
+                //The UNNAMED function here is called an anonymous function or a lambda function.
+                //An unnamed function like this keeps the code in scope. 
+                menus[i].onclick = function() {
+                    //Call on expand menu passing in this object (this). Since this function is 
+                    //attached to menus[i], the "this" keyword is pointing to menus[i]
+                    expandMenu(this);
+                };
+            }
+        }
+    
+        //function to expand out the menu
+		function expandMenu(menu){
+            console.dir(menu); //printing which menu this is for example
+			
+            //what is this element's next sibling? 
+            //The nextElementSibling property in an element object shows the objects next 
+            //the nextSibling property is anything next including new lines or text
+            console.log(menu.nextElementSibling); 
+            
+            //Grab the next element sibling (our span submenu) 
+			var submenu = menu.nextElementSibling;
+            
+            //check the style (css) display property to see if it's currently set to none or not
+			if (submenu.style.display == "none"){
+                //if so set the submenu's display css property to inline
+				submenu.style.display = "inline";
+			} 
+            else {
+                //otherwise set the submenu's display css property to none
+				submenu.style.display = "none";
+			}
+		}
+	</script>
+
+</head>
+<body>
+
+	<span class="rel-title myExpandMenu">
+	  Main Menu I
+	</span>
+    
+	<span style="display:none;">
+	  <br/>
+	  <a  href="#"> 
+	    I SubMenu - 1
+	  </a>
+	  <br/>
+	  <a  href="#" class="myExpandMenu">
+	    I SubMenu - >>
+	  </a>
+	    <span style="display:none; position:relative;left:30px;">
+	      <br/>
+	      <a href="#">
+	        Level 3-1
+	      </a><br/>
+	      <a href="#">
+	        Level 3-2
+	      </a>
+	    </span>
+	  <br/>
+	  <a href="#">
+	    I SubMenu - 3
+	  </a>
+	  
+	</span>
+	<br/>
+	
+	<span class="rel-title myExpandMenu">
+	  Main Menu II
+	</span>
+	
+	<span style="display:none;" >
+	  <br/>
+	  <a  href="#">
+	    II SubMenu - 1
+	  </a>
+	  <br/>
+	  <a  href="#">
+	    II SubMenu - 2
+	  </a>
+	  <br/>
+	  <a  href="#">
+	    II SubMenu - 3
+	  </a>
+	</span>
+	<br/>
+	<span class="rel-title myExpandMenu">
+	  Main Menu III
+	</span>
+	
+	<span style="display:none;" >
+	  <br/>
+	  <a  href="#">
+	    III SubMenu - 1
+	  </a>
+	  <br/>
+	  <a  href="#">
+	    III SubMenu - 2
+	  </a>
+	  <br/>
+	  <a  href="#">
+	    III SubMenu - 3
+	  </a>
+	</span>
+</body>
+</html>
