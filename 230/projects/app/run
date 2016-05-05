@@ -1,5 +1,21 @@
 require 'sinatra'
 require 'erb'
+require 'mini_magick'
+
+# convert images in public to thumbnails
+root = Dir.pwd
+images = "#{root}/public/assets/images"
+project_images = "#{images}/projects"
+FileUtils.rm_f("#{project_images}/thumbnails")
+#FileUtils::mkdir "{project_images}/thumbnails"
+
+Dir.glob("*.png") do |image|
+    img = MiniMagick::Image.open(image)
+    img.resize("200x150")
+    img.write("#{project_images}/thumbnails/#{image}")
+end
+
+
 
 set :bind, '0.0.0.0'
 
