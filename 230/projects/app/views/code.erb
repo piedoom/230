@@ -1,0 +1,29 @@
+<script>$(function(){$('#code').addClass('selected');});</script>
+<div id="container">
+<h2>Bad Code</h2>
+<p>
+    This app was written in Sinatra.  If you've used Flask, it's kind of like that (wheras Django would be the equivalent of
+    rails).  Ruby is a pretty nice language, but the code is an absolute mess of things that probably should
+    not be doing the things they are doing (and that's due to a lot of stuff).
+</p>
+<p>
+    On top of learning Sinatra, I decided to develop this project on FreeBSD, an OS that I 
+    never ran before.  Weirdly enough, it wasn't just linux with a better license, so it 
+    took some getting used to.  I have it set up now with BSPWM, and I wrote this website
+    with Vim.  Everything took a little longer than expected due to some stuff with FreeBSD
+    that I assumed would be simple (like installing Postgresql).   I initially wanted a database
+    and editor for posts, but that just wasn't happening (especially since I recently just broke
+    my Linux partition).  Anyway, it was still pretty fun overall.  
+</p>
+<p>
+    This site processes images with imagemagick.  I initially wanted an uploader and a database
+    but I couldn't get that accomplished in time.  When the program runs, it will search a folder,
+    and automatically create thumbnails.
+</p>
+<p>
+    To run this site locally, you'll need a *nix machine (probably not windows).  Clone the repo, and install
+    Ruby, preferably with RVM.  Any recent version of ruby should work.  Do a `bundle` command in the root directory
+    of this app.  You'll also need to install imagemagick.  Then, simply `./run` the program, and visit it at 
+    localhost:4567
+</p>
+</div>

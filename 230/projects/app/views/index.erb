@@ -1,19 +1,14 @@
-<header>
-    <nav>
-        <div id="links">
-            <a href="#">Home</a>
-        </div>
-        <h1>
-            Alexander Lozada
-        </h1>
-        
-    </nav>
-<header>
-
+<script>$(function(){$('#home').addclass('selected');});</script>
 <div id="content">
-    <% 20.times do %>
-        <article style='background: url(<%= "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/dddfa533635045.56b22692ef145.png" %>)' >
-        
-        </article>
+    <% Dir["#{$project_images}/*"].each do |image| %>
+        <% if File.file?(image) %>
+            <article>
+                <img class="thumbnail" src='<%= "/assets/images/projects/thumbnails/#{File.basename(image)}" %>' >
+                </img>
+                <div class="hover">
+                    <p class="note"><%= "#{File.basename(image, File.extname(image))}" %></p>
+                </div>
+            </article>
+        <% end %>
     <% end %>
 </div>

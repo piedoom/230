@@ -9,8 +9,69 @@
         <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:400,300' rel='stylesheet' type='text/css'>
         <link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+        <script>
+            $(function(){
+                $("#content article").click(function(e){
+                    var image = document.createElement("img");
+                    var fullImageSource = $(this).find("img").attr("src").replace(/^.*[\\\/]/, '')
+                    image.src = "/assets/images/projects/" + fullImageSource;
+                    image.style.display = "block";
+                    image.style.margin = "0 auto";
+
+
+                    var body = document.querySelector("body")
+
+                    // construct the image thing
+                    var view = document.createElement("div")
+                    view.style.left = 0;
+                    view.style.right = 0;
+                    view.style.top = 0;
+                    view.style.bottom = 0;
+                    view.style.position = "fixed";
+                    view.style.background = "rgba(0,0,0,0.8)";
+
+                    body.appendChild(view);
+                    view.appendChild(image);
+                    view.classList.add("viewer");
+                });
+
+                $(document).on("click", ".viewer", function(e){
+                    $(".viewer").fadeOut(200, function(){
+                        $(this).remove();
+                    });
+                });
+                function refresh(){
+                    $('.hover p').each(function(){
+                        console.log(this + 'a')
+                        $(this).css('margin-top', $('.hover').height()/2 - $(this).height()/2);
+                    });
+                }
+
+                $(window).resize(function(){
+                    refresh();                   
+                });
+                refresh();
+
+            });
+        </script>
     </head>
     <html>
+
+        <header>
+            <nav>
+                <h1>
+                    Alexander Lozada
+                </h1>
+                <div id="links">
+                    <a id="home" href="/">HOME</a>
+                    <a id="about" href="/about">ABOUT</a>
+                    <a id="code" href="/code">CODE</a>
+                </div>
+
+            </nav>
+        <header>
+    
         <div class="container">
             <%= yield %>
         </div

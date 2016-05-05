@@ -1,19 +1,30 @@
+#!/usr/bin/env ruby
+
 require 'sinatra'
 require 'erb'
 require 'mini_magick'
 
 # convert images in public to thumbnails
-root = Dir.pwd
-images = "#{root}/public/assets/images"
-project_images = "#{images}/projects"
-FileUtils.rm_f("#{project_images}/thumbnails")
-#FileUtils::mkdir "{project_images}/thumbnails"
+$root = Dir.pwd
+$images = "#{$root}/public/assets/images"
+$project_images = "#{$images}/projects"
+FileUtils.rm_f("#{$project_images}/thumbnails")
+FileUtils::mkdir "#{$project_images}/thumbnails" unless File.directory?("#{$project_images}/thumbnails")
 
-Dir.glob("*.png") do |image|
-    img = MiniMagick::Image.open(image)
-    img.resize("200x150")
-    img.write("#{project_images}/thumbnails/#{image}")
-end
+# convert all images to thumbnails when program is run
+# would have used a database here, but I messed up
+
+Dir["#{$project_images}/*"].each do |image|
+    if File.file?(image)
+
+      # imagemagick, more like imagetragic, amirite? 
+      # seriously though please dont break my box i know its tempting
+      img = MiniMagick::Image.open(image)
+      img.resize("400")
+      img.crop("400x300+0+0")
+      img.write("#{$project_images}/thumbnails/#{File.basename(image)}")
+    end
+end 
 
 
 
@@ -27,3 +38,17 @@ get '/assets/images/:file' do
     send_file("/assets/images/#{params[:file
     ]}", disposition: 'inline')
 end
+
+get '/about' do
+  erb :about
+end
+
+get '/code' do
+  erb :code
+end
+
+not_found do
+  status 404
+  erb :oops
+end
+
